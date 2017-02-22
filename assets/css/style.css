@@ -1,0 +1,115 @@
+ul,li{list-style:none;}
+a:link{text-decoration:none;}
+img{line-height:0;font-size:0;}
+
+/* common style */
+.l-tooltip-toggle{margin:auto 4px;cursor:pointer;}
+.l-tooltip-toggle:hover{text-decoration:none}
+
+.l-tooltip{position:absolute;width:auto;color:#fff!important;padding:2px 5px;border-radius:4px;min-width:38px;text-align:center;font-size:14px;line-height:1.5; word-break:keep-all; word-wrap:normal;white-space: nowrap;z-index:1000;}
+.l-tooltip:after{content:"";position:absolute;left:50%; bottom:-5px;border-left: 6px solid transparent; border-right: 6px solid transparent;margin-left:-6px;}
+.l-tooltip.blue{background-color:#428bca;}
+.l-tooltip.blue:after{ border-top: 6px solid #428bca;}
+.l-tooltip.blueDeep{background-color:#3e76aa;}
+.l-tooltip.blueDeep:after{ border-top: 6px solid #3e76aa;}
+.l-tooltip.green{background-color:#69aa46;}
+.l-tooltip.green:after{ border-top: 6px solid #69aa46;}
+.l-tooltip.red{background-color:#dd5a43;}
+.l-tooltip.red:after{ border-top: 6px solid #dd5a43;}
+.l-tooltip.cyan{background-color:#3ee3dd;}
+.l-tooltip.cyan:after{ border-top: 6px solid #3ee3dd;}
+.l-tooltip.cyanDeep{background-color:#5fc2bd;}
+.l-tooltip.cyanDeep:after{ border-top: 6px solid #5fc2bd;}
+.l-tooltip.purple{background-color:#9588d6;}
+.l-tooltip.purple:after{ border-top: 6px solid #9588d6;}
+.l-tooltip.goldenrod{background-color:#e9bf98;}
+.l-tooltip.goldenrod:after{ border-top: 6px solid #e9bf98;}
+.l-tooltip.brown{background-color:#aa3e62;}
+.l-tooltip.brown:after{ border-top: 6px solid #aa3e62;}
+.l-tooltip.gray{background-color:#707070;}
+.l-tooltip.gray:after{ border-top: 6px solid #707070;}
+.l-tooltip.light-gray{background-color:#a1a1a1;}
+.l-tooltip.light-gray:after{ border-top: 6px solid #a1a1a1;}
+.l-tooltip.pink{background-color:#f47c7a;}
+.l-tooltip.pink:after{ border-top: 6px solid #f47c7a;}
+
+.list-page{padding:28px 2% 0;}
+
+/* list page of search condition */
+.list-page-btns-group{margin-bottom:12px;line-height:0;font-size: 0;}
+.list-page-btns-group>*{vertical-align: bottom;}
+.list-page-btns-group .btn{position: relative;border:none;line-height: 1.68;}
+.list-page-btns-group .btn+.btn{margin-left: 20px;}
+.list-searchbox{position:relative;margin-bottom:12px;padding-right:150px;overflow:hidden}
+.list-searchbox .search-form{width:100%;float:right}
+.list-searchbox .search-items{position:relative;width:100%;max-width: 100%;margin:0;padding-left:0;}
+.list-searchbox li{position:relative;width:15%;max-width:184px;float:left;}
+@media(max-width:1280px){
+    .list-searchbox li{width:30%}
+}
+.list-searchbox li>label{width:86%;}
+.list-searchbox .input-control .input-addon{padding: 0 6px;border: 1px solid #e0e0e0;}
+.list-searchbox input[type="text"],.list-searchbox select{border: 1px solid #e0e0e0;color:#666;font:12px/18px Arial,"Microsoft YaHei";-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.list-searchbox :disabled{opacity:.8;filter:alpha(opacity=80);}
+.list-searchbox .select-control,.list-searchbox .select-control:before{border-color:#e0e0e0;}
+.list-searchbox .select-control select{padding: 5px 6px;padding-right: 0;}
+.list-searchbox .input-hint{position:absolute;left:8px;top:8px;font-size:12px;color:#444}
+/* placeholder 颜色样式 */
+.list-searchbox ::-moz-placeholder{color:#444;}              /*ff*/
+.list-searchbox ::-webkit-input-placeholder{color:#666;}     /*chrome,safari*/
+.list-searchbox :-ms-input-placeholder{color:#666;}          /*ie10*/
+.list-searchbox .list-searchbox-btn-group{position: absolute;right: 0;top: 2px;}
+.list-searchbox .list-searchbox-btn-group .btn{border:none;line-height: 1.68;}
+.list-searchbox .list-searchbox-btn-group .btn+.btn{margin-left:20px;}
+
+/* 验证信息 */
+.validation-tip{position:absolute;left:10px;bottom:-20px;display: block;padding-left:18px !important;white-space: nowrap;clear: both;color:#f00;line-height:20px !important;text-indent: 0;font-size:12px;background:url(../images/icon-exclamation-sign.png) 0 2px no-repeat;}
+.validation-tip.darger{background-position:0 2px;}
+.validation-tip.warning{background-position:0 -28px;}
+.validation-tip.hint{padding: 0 !important;background:none;color:#ccc;}
+/* 优化的下拉控件 */
+.select-group{display: table;width: 100%;border:1px solid #c0c0c0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.select-group .select-control{display: table-cell;width: auto;}
+.select-group .select-control+.select-control{border-left:1px solid #c0c0c0;}
+.select-group .select-control:before{right:0;}
+.select-group .select-control select{border: none;}
+.select-control{position:relative;display:block;width:100%;background-color:#fff;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;font-size: 0;line-height: 0;}
+.select-control select{width:100%;height:32px;padding:6px;padding-right:0;-moz-appearance:none;-webkit-appearance:none;appearance:none;background-color:transparent;border:none;border:1px solid #c0c0c0;font:12px/18px Arial,"Microsoft YaHei";}
+.select-control select option{line-height: 30px;}
+.select-control:before,.select-control:after{display: none\9;content:"";position:absolute;pointer-events: none;}
+.select-control:before{right:1px;top:1px;bottom:1px;width: 19px;border-left:1px solid #c0c0c0;background-color:#f5f5f5;}
+.select-control:after{right: 6px;top:15px;border:3px solid #000;border-color:#000 transparent transparent}
+/* 输入框控件 */
+.input-control{position:relative;display: table;width:100%;border-collapse: separate;font-size: 0;line-height: 0;}
+.input-control input[type="text"],.input-control textarea,.input-control .input-addon{display: table-cell;-webkit-box-sizing: border-box;box-sizing: border-box;border: 1px solid #ccc;vertical-align: top;}
+.input-control input[type="text"],.input-control textarea{width: 100%;}
+.input-control input[type="text"]{height:32px;}
+.input-control textarea{display: block;}
+.input-control .input-addon{position:relative;padding: 0 8px;width:1%;text-align:center;max-height:100%;line-height: 1;font-size:12px;background-color: #eee;vertical-align: middle;white-space: nowrap;}
+.input-control .input-addon .icon{display:inline-block;width:18px;height:18px;font: 0/0 Arial;vertical-align: middle;}
+.input-control .input-addon:first-child{border-right: none;}
+.input-control input[type="text"]+.input-addon{border-left: none;}
+/* 单选框组 */
+.radio-group {position:relative;padding: 0 22px 0 2px;height:32px;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.radio-group .radio-control{position:relative;display:inline-block;overflow:hidden;cursor:default;}
+.radio-group .radio-control+.radio-control{margin-left:26px;}
+.radio-group input[type="radio"]{vertical-align:middle; margin-top:-2px; margin-bottom:1px;}
+/* 复选框组 */
+
+/* dialog */
+.layer-dialog {
+	padding: 20px 36px;
+}
+.layer-dialog .label-name{
+	display: block;line-height: 1.68;color: #888;
+}
+
+/* auth */
+.table tbody [class^="level-ls-"] td{
+	line-height: 2.5;
+}
+.level-ls-1 td:first-child{
+    padding-left: 30px;
+    background: url(../images/levels-bg.png) no-repeat 8px 8px;
+}
+
