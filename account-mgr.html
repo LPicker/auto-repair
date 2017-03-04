@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>权限管理</title>
+    <title>账户管理</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -620,21 +620,21 @@
                             <i class="icon-home home-icon"></i>
                             <a href="#">首页</a>
                         </li>
-                        <li class="active">权限管理</li>
+                        <li class="active">账户管理</li>
                     </ul>
                     <!-- .breadcrumb -->
                 </div>
                 <div class="page-content list-page">
                     <div class="list-page-btns-group">
-                        <a type="button" class="btn btn-primary btn-sm" href="" id="btnAdd">添加权限</a>
+                        <a type="button" class="btn btn-primary btn-sm" href="account-edit.html" id="btnAdd">添加账户</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-bordered table-condensed table-hover">
                             <thead>
                                 <tr>
-                                    <th>权限名称</th>
-                                    <th>权限字符串</th>
-                                    <th>权限等级</th>
+                                    <th>账户名称</th>
+                                    <th>账户字符串</th>
+                                    <th>账户等级</th>
                                     <th>显示状态</th>
                                 </tr>
                             </thead>
@@ -770,41 +770,6 @@
         </a>
     </div>
     <!-- /.main-container -->
-    <div class="layer-dialog layer-edit" style="display: none">
-        <div class="validate-tip">Please input the auth name!</div>
-        <span class="label-name required">权限名称</span>
-        <label class="block clearfix">
-            <input type="text" class="form-control">
-        </label>
-
-        <span class="label-name">显示标志</span>
-        <label class="block clearfix">
-            <input type="text" class="form-control">
-        </label>
-
-        <span class="label-name">显示标志</span>
-        <label>
-            <input name="form-field-radio" type="radio" class="ace">
-            <span class="lbl"> radio option 2</span>
-        </label>
-        <label>
-            <input name="form-field-radio" type="radio" class="ace">
-            <span class="lbl"> radio option 2</span>
-        </label>
-
-        <span class="label-name">权限等级</span>
-        <label class="block clearfix">
-            <select class="form-control">
-                <option>Connecticut</option>
-                <option>Delaware</option>
-                <option>Florida</option>
-                <option>Georgia</option>
-                <option>Hawaii</option>
-                <option>Idaho</option>
-                <option>Illinois</option>
-            </select>
-        </label>
-    </div>
     <!--[if !IE]> -->
     <script src="assets/js/jquery-2.0.3.min.js"></script>
     <!-- <![endif]-->
@@ -818,25 +783,6 @@
     <script src="assets/3rdlib/DatePicker/WdatePicker.js"></script>
     <script>
         tooltip();
-
-        $("#btnAdd, .icon-edit").click(function (e){
-            e.preventDefault();
-            layer.open({
-                type: 1,
-                area: ['360px'],
-                title: '添加权限',
-                content: $('.layer-edit'),
-                btn: ["确定","取消"],
-                yes: function(index){
-                    layer.msg("你刚刚点了确定，现在后悔也没用了！",{icon: 1});
-                    layer.close(index); //手动关闭 layer
-                },
-                cancel: function(){
-                    layer.msg("取消操作",{icon: 2});
-                }
-            });
-        });
-
         // delete
         $(".icon-trash").click(function(e){
             e.preventDefault();

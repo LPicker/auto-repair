@@ -103,6 +103,18 @@ img{line-height:0;font-size:0;}
 .layer-dialog .label-name{
 	display: block;line-height: 1.68;color: #888;
 }
+.layer-dialog .required:after{
+	content: "*";color:#f00;
+}
+.form-horizontal .required{
+	position: relative;
+}
+.form-horizontal .required:after{
+	content: "*";position:absolute;right:-8px;color:#f00;
+}
+.checkbox-wapper{
+	 height: 175px; max-height: 200px;width:540px;border:1px #d5d5d5 solid;overflow-y:auto;
+}
 
 /* auth */
 .table tbody [class^="level-ls-"] td{
@@ -112,4 +124,4 @@ img{line-height:0;font-size:0;}
     padding-left: 30px;
     background: url(../images/levels-bg.png) no-repeat 8px 8px;
 }
-
+.validate-tip{line-height:1.68;color: #f00;}

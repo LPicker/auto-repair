@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-
 <head>
-    <meta charset="utf-8">
-    <title>权限管理</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- basic styles -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <!--[if IE 7]>
+	<meta charset="utf-8">
+	<title>角色编辑</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- basic styles -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!--[if IE 7]>
 	  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
 	<![endif]-->
-    <!-- ace styles -->
-    <link rel="stylesheet" href="assets/css/ace.min.css">
-    <link rel="stylesheet" href="assets/css/ace-rtl.min.css">
+
+	<!-- ace styles -->
+
+	<link rel="stylesheet" href="assets/css/ace.min.css">
+	<link rel="stylesheet" href="assets/css/ace-rtl.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--[if lte IE 8]>
+
+	<!--[if lte IE 8]>
 	  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 	<![endif]-->
-    <!-- inline styles related to this page -->
-    <!-- ace settings handler -->
-    <script src="assets/js/ace-extra.min.js"></script>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+
+	<!-- inline styles related to this page -->
+
+	<!-- ace settings handler -->
+
+	<script src="assets/js/ace-extra.min.js"></script>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+	<!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
 </head>
 
 <body>
-    <div class="navbar navbar-default" id="navbar">
+	<div class="navbar navbar-default" id="navbar">
     <script type="text/javascript">
         try{ace.settings.check('navbar' , 'fixed')}catch(e){}
     </script>
@@ -297,9 +305,9 @@
         </div><!-- /.navbar-header -->
     </div><!-- /.container -->
 </div>
-    <div class="main-container" id="main-container">
-        <div class="main-container-inner">
-            <a class="menu-toggler" id="menu-toggler" href="#">
+	<div class="main-container">
+		<div class="main-container-inner">
+			<a class="menu-toggler" id="menu-toggler" href="#">
     <span class="menu-text"></span>
 </a>
 <div class="sidebar" id="sidebar">
@@ -613,241 +621,101 @@
         try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
     </script>
 </div>
-            <div class="main-content">
-                <div class="breadcrumbs" id="breadcrumbs">
-                    <ul class="breadcrumb">
-                        <li>
-                            <i class="icon-home home-icon"></i>
-                            <a href="#">首页</a>
-                        </li>
-                        <li class="active">权限管理</li>
-                    </ul>
-                    <!-- .breadcrumb -->
-                </div>
-                <div class="page-content list-page">
-                    <div class="list-page-btns-group">
-                        <a type="button" class="btn btn-primary btn-sm" href="" id="btnAdd">添加权限</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-condensed table-hover">
-                            <thead>
-                                <tr>
-                                    <th>权限名称</th>
-                                    <th>权限字符串</th>
-                                    <th>权限等级</th>
-                                    <th>显示状态</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="level-ls-0">
-                                    <td>控制台
-                                        <a class="l-tooltip-toggle green" href="" title="编辑">
-                                            <i class="icon-edit bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle red" href="" title="删除">
-                                            <i class="icon-trash bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle green" href="" title="降序">
-                                            <i class="icon-long-arrow-down bigger-110"></i>
-                                        </a>
-                                    </td>
-                                    <td></td>
-                                    <td>一级菜单</td>
-                                    <td>
-                                    	<span class="label label-sm label-success">显示</span>
-                                    </td>
-                                </tr>
-                                <tr class="level-ls-1">
-                                    <td>控制台
-                                        <a class="l-tooltip-toggle green" href="" title="编辑">
-                                            <i class="icon-edit bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle red" href="" title="删除">
-                                            <i class="icon-trash bigger-110"></i>
-                                        </a>
-                                    </td>
-                                    <td>admin.html</td>
-                                    <td>二级菜单</td>
-                                    <td>
-                                        <span class="label label-sm label-success">显示</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr class="level-ls-0">
-                                    <td>网站管理
-                                        <a class="l-tooltip-toggle green" href="" title="编辑">
-                                            <i class="icon-edit bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle red" href="" title="删除">
-                                            <i class="icon-trash bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle green" href="" title="降序">
-                                            <i class="icon-long-arrow-down bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle green" href="" title="升序">
-                                            <i class="icon-long-arrow-up bigger-110"></i>
-                                        </a>
-                                    </td>
-                                    <td></td>
-                                    <td>一级菜单</td>
-                                    <td>
-                                    	<span class="label label-sm label-success">显示</span>
-                                    </td>
-                                </tr>
-                                <tr class="level-ls-1">
-                                    <td>友情链接
-                                        <a class="l-tooltip-toggle green" href="" title="编辑">
-                                            <i class="icon-edit bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle red" href="" title="删除">
-                                            <i class="icon-trash bigger-110"></i>
-                                        </a>
-                                        <!--第一个-->
-                                        <!--不止一个       显示降序-->
-                                        <a class="l-tooltip-toggle green" href="" title="降序">
-                                            <i class="icon-long-arrow-down bigger-110"></i>
-                                        </a>
-                                    </td>
-                                    <td>friendlylink.html</td>
-                                    <td>二级菜单</td>
-                                    <td>
-                                        <span class="label label-sm label-success">显示</span>
-                                    </td>
-                                </tr>
-                                <tr class="level-ls-1">
-                                    <td>流量装置设计
-                                        <a class="l-tooltip-toggle green" href="" title="编辑" "="">
-                                            <i class="icon-edit bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle red" href="" title="删除">
-                                            <i class="icon-trash bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle green" href="" title="升序">
-                                            <i class="icon-long-arrow-up bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle green" href="" title="降序">
-                                            <i class="icon-long-arrow-down bigger-110"></i>
-                                        </a>
-                                    </td>
-                                    <td>systemdevice.html</td>
-                                    <td>二级菜单</td>
-                                    <td>
-                                        <span class="label label-sm label-danger">不显示</span>
-                                    </td>
-                                </tr>
-                                <tr class="level-ls-1">
-                                    <td>流量仪表选型
-                                        <a class="l-tooltip-toggle green" href="" title="编辑" "="">
-                                            <i class="icon-edit bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle red" href="" title="删除">
-                                            <i class="icon-trash bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle green" href="" title="升序">
-                                            <i class="icon-long-arrow-up bigger-110"></i>
-                                        </a>
-                                        <a class="l-tooltip-toggle green" href="" title="降序">
-                                            <i class="icon-long-arrow-down bigger-110"></i>
-                                        </a>
-                                    </td>
-                                    <td>systemcheck.html</td>
-                                    <td>二级菜单</td>
-                                    <td>
-                                        <span class="label label-sm label-success">显示</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- /.page-content -->
-            </div>
-        </div>
-        <!-- /.main-container-inner -->
-        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-            <i class="icon-double-angle-up icon-only bigger-110"></i>
-        </a>
-    </div>
-    <!-- /.main-container -->
-    <div class="layer-dialog layer-edit" style="display: none">
-        <div class="validate-tip">Please input the auth name!</div>
-        <span class="label-name required">权限名称</span>
-        <label class="block clearfix">
-            <input type="text" class="form-control">
-        </label>
+			<div class="main-content">
+				<div class="breadcrumbs" id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li>
+							<i class="icon-home home-icon"></i>
+							<a href="#">首页</a>
+						</li>
+						<li class="active">角色编辑</li>
+					</ul><!-- .breadcrumb -->
+				</div>
 
-        <span class="label-name">显示标志</span>
-        <label class="block clearfix">
-            <input type="text" class="form-control">
-        </label>
+				<div class="page-content edit-page">
+	                <div class="validate-tip col-xs-12 col-sm-9 col-sm-offset-3">Please input the auth name!</div>
+	                <div id="roleTree" style="text-align:left; background-color:#FFFFFF;"></div>
+					<button onclick="checkForm()">查看选中的节点ID</button>
+					<button onclick="setCheckedNode('3,31,32,33')">设置节点ID选中</button>
+				</div><!-- /.page-content -->
+			</div><!-- /main-content -->
+		</div><!-- /.main-container-inner -->
 
-        <span class="label-name">显示标志</span>
-        <label>
-            <input name="form-field-radio" type="radio" class="ace">
-            <span class="lbl"> radio option 2</span>
-        </label>
-        <label>
-            <input name="form-field-radio" type="radio" class="ace">
-            <span class="lbl"> radio option 2</span>
-        </label>
+		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+			<i class="icon-double-angle-up icon-only bigger-110"></i>
+		</a>
+	</div><!-- /.main-container -->
+	<!--[if !IE]> -->
+	<script src="assets/js/jquery-2.0.3.min.js"></script>
+	<!-- <![endif]-->
 
-        <span class="label-name">权限等级</span>
-        <label class="block clearfix">
-            <select class="form-control">
-                <option>Connecticut</option>
-                <option>Delaware</option>
-                <option>Florida</option>
-                <option>Georgia</option>
-                <option>Hawaii</option>
-                <option>Idaho</option>
-                <option>Illinois</option>
-            </select>
-        </label>
-    </div>
-    <!--[if !IE]> -->
-    <script src="assets/js/jquery-2.0.3.min.js"></script>
-    <!-- <![endif]-->
-    <!--[if IE]>
+	<!--[if IE]>
 	<script src="assets/js/jquery-1.10.2.min.js"></script>
 	<![endif]-->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/ace.min.js"></script>
-    <script src="assets/js/base-ui.js"></script>
-    <script src="assets/3rdlib/layer/layer.js"></script>
-    <script src="assets/3rdlib/DatePicker/WdatePicker.js"></script>
-    <script>
-        tooltip();
 
-        $("#btnAdd, .icon-edit").click(function (e){
-            e.preventDefault();
-            layer.open({
-                type: 1,
-                area: ['360px'],
-                title: '添加权限',
-                content: $('.layer-edit'),
-                btn: ["确定","取消"],
-                yes: function(index){
-                    layer.msg("你刚刚点了确定，现在后悔也没用了！",{icon: 1});
-                    layer.close(index); //手动关闭 layer
-                },
-                cancel: function(){
-                    layer.msg("取消操作",{icon: 2});
-                }
-            });
-        });
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/ace.min.js"></script>
+	<script src="assets/3rdlib/DatePicker/WdatePicker.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+	<script>
+		$(function() {
+		    var checkNodeIds = "12,22".split(",");
+		    $("#roleTree").jstree({
+		            "themes": {
+		                "theme": "default",
+		                "dots": true,
+		                "icons": false
+		            }, //设置有虚线，不显示文件夹图标
+		            "json_data": {
+		                "ajax": {
+		                    "url": "jsondata.ashx"
+		                }
+		            },
+		            "plugins": ["themes", "json_data", "checkbox", "ui"] // html_data   json_data 可以用html格式或者json格式
+		        })
+		        .bind("loaded.jstree", function(event, data) { //tree load完才做其他事
+		            $("#roleTree").jstree("open_all");
+		            $("#roleTree").find("li").each(function() {
+		                for (var i = 0; i < checkNodeIds.length; i++) {
+		                    if ($(this).attr("id") == checkNodeIds[i]) {
+		                        //alert($(this).attr("id"));
+		                        $("#roleTree").jstree("check_node", $(this));
+		                        break;
+		                    }
+		                }
+		            })
+		        });
+		});
+		// 获取选中id
+		function checkForm(obj) {
+		    var ids = checkForm2(obj);
+		    alert(ids);
+		}
 
-        // delete
-        $(".icon-trash").click(function(e){
-            e.preventDefault();
-            layer.confirm("是否删除？",{
-                btn: ["确定","取消"]
-            },function(){
-                layer.msg("已删除",{icon: 1});
-            },function(){
-                layer.msg("取消操作",{icon: 2});
-            });
-        });
-    </script>
+		function checkForm2(obj) {
+		    var ids = [];
+		    $.jstree._reference($("#roleTree")).get_checked(obj).each(function(i, n) {
+		        ids.push(n.id);
+		        if ($(this).find("> ul").length > 0) {
+		            ids.push(checkForm2($(this)));
+		        }
+		    });
+		    return ids;
+		}
+
+		//根据ids数组 初始化选中
+		function setCheckedNode(ids) {
+		    //$.jstree._reference('#roleTree').uncheck_all();
+		    $("#roleTree").jstree("uncheck_all"); //清空
+		    if (ids != "") {
+		        var tempCheckStr = ids.split(',');
+		        $(tempCheckStr).each(function(i, item) {
+		            //$.jstree._reference('#roleTree').check_node("#"+item);
+		            $("#roleTree").jstree("check_node", "#" + item);
+		        })
+		    }
+		}
+	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css">
 </body>
 </html>
