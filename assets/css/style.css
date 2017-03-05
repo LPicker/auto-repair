@@ -101,7 +101,7 @@ img{line-height:0;font-size:0;}
 	padding: 20px 36px;
 }
 .layer-dialog .label-name{
-	display: block;line-height: 1.68;color: #888;
+	display: block;line-height: 1.68;color: #666;
 }
 .layer-dialog .required:after{
 	content: "*";color:#f00;
