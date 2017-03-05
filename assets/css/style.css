@@ -113,7 +113,7 @@ img{line-height:0;font-size:0;}
 	content: "*";position:absolute;right:-8px;color:#f00;
 }
 .checkbox-wapper{
-	 height: 175px; max-height: 200px;width:540px;border:1px #d5d5d5 solid;overflow-y:auto;
+	 height: 175px; max-height: 200px;border:1px #d5d5d5 solid;overflow-y:auto;
 }
 
 /* auth */

@@ -632,14 +632,14 @@
 					</ul><!-- .breadcrumb -->
 				</div>
 
-				<div class="page-content edit-page">
+				<div class="page-content edit-page row">
 	                <div class="validate-tip col-xs-12 col-sm-9 col-sm-offset-3">Please input the auth name!</div>
-					<form class="form-horizontal">
+					<form class="form-horizontal col-xs-12">
 						<div class="form-group">
 							<label class="control-label col-xs-12 col-sm-3 no-padding-right required" for="email">账户名</label>
 
 							<div class="col-xs-12 col-sm-9">
-								<input type="email" name="email" id="email" class="col-xs-12 col-sm-6">
+								<input type="email" name="email" id="email" class="col-xs-12 col-sm-4">
 							</div>
 						</div>
 
@@ -663,7 +663,7 @@
 							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="name">个人邮箱</label>
 
 							<div class="col-xs-12 col-sm-9">
-								<input type="text" id="name" name="name" class="col-xs-12 col-sm-5">
+								<input type="text" id="name" name="name" class="col-xs-12 col-sm-4">
 							</div>
 						</div>
 
@@ -671,7 +671,7 @@
 							<label class="control-label col-xs-12 col-sm-3 no-padding-right required" for="phone">关联角色</label>
 
 							<div class="col-xs-12 col-sm-9">
-								<div class="checkbox-wapper">
+								<div class="checkbox-wapper col-xs-12 col-sm-8">
 									<div class="control-group">
 										<div class="checkbox">
 											<label>
@@ -709,73 +709,25 @@
 							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="comment">备注</label>
 
 							<div class="col-xs-12 col-sm-9">
-								<textarea class="input-xxlarge col-xs-12 col-sm-8" name="comment" id="comment"></textarea>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-xs-12 col-sm-3 no-padding-right">Subscribe to</label>
-
-							<div class="col-xs-12 col-sm-9">
-								<div>
-									<label>
-										<input name="subscription" value="1" type="checkbox" class="ace">
-										<span class="lbl"> Latest news and announcements</span>
-									</label>
-								</div>
-
-								<div>
-									<label>
-										<input name="subscription" value="2" type="checkbox" class="ace">
-										<span class="lbl"> Product offers and discounts</span>
-									</label>
-								</div>
+								<textarea class="col-xs-12 col-sm-8" id="comment"></textarea>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="control-label col-xs-12 col-sm-3 no-padding-right">Gender</label>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button class="btn btn-info" type="button">
+                                    <i class="icon-ok bigger-110"></i>
+                                    Submit
+                                </button>
 
-							<div class="col-xs-12 col-sm-9">
-								<div>
-									<label class="blue">
-										<input name="gender" value="1" type="radio" class="ace">
-										<span class="lbl"> Male</span>
-									</label>
-								</div>
-
-								<div>
-									<label class="blue">
-										<input name="gender" value="2" type="radio" class="ace">
-										<span class="lbl"> Female</span>
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="platform">Platform</label>
-
-							<div class="col-xs-12 col-sm-9">
-									<select class="input-medium" id="platform" name="platform">
-										<option value="">------------------</option>
-										<option value="linux">Linux</option>
-										<option value="windows">Windows</option>
-										<option value="mac">Mac OS</option>
-										<option value="ios">iOS</option>
-										<option value="android">Android</option>
-									</select>
-								</div>
-							</div>
-						</form></div>
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-4 col-sm-offset-3">
-								<label>
-									<input name="agree" id="agree" type="checkbox" class="ace">
-									<span class="lbl"> I accept the policy</span>
-								</label>
-							</div>
-						</div>
-					
+                                &nbsp; &nbsp; &nbsp;
+                                <button class="btn" type="reset">
+                                    <i class="icon-undo bigger-110"></i>
+                                    Reset
+                                </button>
+                            </div>
+                        </div>
+					</form>
 				</div><!-- /.page-content -->
 			</div><!-- /main-content -->
 		</div><!-- /.main-container-inner -->
