@@ -133,3 +133,5 @@ img{line-height:0;font-size:0;}
 .l-tree .role-wapper:before{content: none;}
 .l-tree .role-wapper .tree-folder-content:before{left: -10px;}
 .l-tree .role-wapper .tree-folder-content .tree-item:before{left: -9px;}
+.widget-btn-group{padding: 20px 0;}
+.widget-btn-group .btn{margin: 0 12px;}
