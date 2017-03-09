@@ -75,3 +75,91 @@ function configLayer(){     //配置layer的第三方皮肤
         });
     }
 }
+
+function Ltree(tree, tarEle){
+    this.treeDatas = [];
+
+    var init = function (treeArr, tarEle, cloneTree, isChild){
+        var $ul = $("<ul>", {
+            class: "tree-folder-content"
+        });
+        if(!isChild){
+            $ul.addClass("l-tree tree");
+        }
+
+        $.each(treeArr, function(i, ele){
+            cloneTree.push(ele);
+
+            var $input = $("<input>", {
+                type: "checkbox",
+                checked: ele.checked,
+                class: "ace ace-checkbox-2",
+                "data-index": ele.index
+            });
+            var $label = $("<label>", {
+                index: ele.index
+            }).prepend($input, $("<span>", {class: "lbl", text: ele.name}));
+
+            var $li = $("<li>", {id: ele.index}).append($label);
+            if(!isChild){
+                $li.addClass("role-wapper");
+            }
+
+            var children = ele.children;
+            if(children && children.length > 0){
+                $li.addClass("tree-folder");
+                $label.addClass("tree-folder-header");
+                var cloneChildren = cloneTree[i].children = [];
+                init(children, $li, cloneChildren, true);
+            }else{
+                $li.addClass("tree-item");
+            }
+
+            $ul.append($li);
+        });
+        tarEle.append($ul);
+    };
+
+    var checkAll = function(id, checked){
+        $("#"+id).find("ul :checkbox").prop("checked", checked);
+        $.each(treeDatas[id].children, function(i, ele){
+            ele.checked = checked;
+        });
+    };
+
+    var checkParent = function(id, checked){
+        var $parentLi = $("#"+id);
+        var $checkbox = $parentLi.find("ul :checkbox");
+        var $checkedbox = $parentLi.find("ul :checkbox:checked");
+        var parCheckbox = $parentLi.find("label :checkbox")[0];
+        if($checkedbox.length < $checkbox.length){
+            parCheckbox.checked = false;
+            treeDatas[id].checked = false;
+        }else{
+            parCheckbox.checked = true;
+            treeDatas[id].checked = true;
+        }
+    };
+
+    var treeDatas = this.treeDatas;
+    init(tree, tarEle, treeDatas);
+
+    $(document).on("change", ":checkbox", function(e){
+        $.each(treeDatas, function(i, ele){
+            var tarChecked = e.target.checked,
+                checkedIdArr = $(e.target).data("index").toString().split("-"),
+                lev1Id = checkedIdArr[0],
+                lev2Id = checkedIdArr[1];
+            // select level 1
+            if(checkedIdArr.length === 1){
+                treeDatas[lev1Id].checked = tarChecked;
+                checkAll(lev1Id, tarChecked);
+            // select level 2
+            }else if(checkedIdArr.length === 2){
+                treeDatas[lev1Id].children[lev2Id].checked = tarChecked;
+                checkParent(lev1Id, tarChecked);
+            }
+        });
+    });
+    return treeDatas;
+}

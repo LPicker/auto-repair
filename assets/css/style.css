@@ -125,3 +125,11 @@ img{line-height:0;font-size:0;}
     background: url(../images/levels-bg.png) no-repeat 8px 8px;
 }
 .validate-tip{line-height:1.68;color: #f00;}
+
+/* role */
+.l-tree{margin: 0;}
+.l-tree:before{content: none;}
+.l-tree .role-wapper{width: 25%; float: left;}
+.l-tree .role-wapper:before{content: none;}
+.l-tree .role-wapper .tree-folder-content:before{left: -10px;}
+.l-tree .role-wapper .tree-folder-content .tree-item:before{left: -9px;}

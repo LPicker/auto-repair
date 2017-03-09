@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="assets/css/ace.min.css">
 	<link rel="stylesheet" href="assets/css/ace-rtl.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="http://www.fuelcdn.com/fuelux/3.7.3/css/fuelux.min.css" rel="stylesheet"/>
+    <link href="http://www.fuelcdn.com/fuelux/3.7.3/css/fuelux.min.css" rel="stylesheet">
 
 	<!--[if lte IE 8]>
 	  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -549,7 +549,7 @@
             </a>
             <ul class="submenu">
                 <li>
-                    <a href=""><i class="icon-double-angle-right"></i>账户管理</a>
+                    <a href="account-mgr.html"><i class="icon-double-angle-right"></i>账户管理</a>
                 </li>
                 <li>
                     <a href=""><i class="icon-double-angle-right"></i>导航管理</a>
@@ -558,7 +558,7 @@
                     <a href=""><i class="icon-double-angle-right"></i>角色管理</a>
                 </li>
                 <li class="active">
-                    <a href=""><i class="icon-double-angle-right"></i>权限管理</a>
+                    <a href="auth-mgr.html"><i class="icon-double-angle-right"></i>权限管理</a>
                 </li>
             </ul>
         </li>
@@ -635,59 +635,19 @@
 
 				<div class="page-content edit-page">
                     <!-- PAGE CONTENT BEGINS -->
-
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="widget-box">
                                 <div class="widget-header header-color-blue2">
                                     <h4 class="lighter smaller">修改角色对应权限</h4>
                                 </div>
-
                                 <div class="widget-body">
-                                    <div class="widget-main padding-8">
-                                        <div id="tree1" class="tree"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="widget-box">
-                                <div class="widget-header header-color-blue2">
-                                    <h4 class="lighter smaller">Choose Categories</h4>
-                                </div>
-
-                                <div class="widget-body">
-                                    <div class="widget-main padding-8">
-                                        <ul id="myTree" class="tree tree-folder-select" role="tree">
-                                          <li class="tree-branch hide" data-template="treebranch" role="treeitem" aria-expanded="false">
-                                            <div class="tree-branch-header">
-                                              <button class="glyphicon icon-caret glyphicon-play"><span class="sr-only">Open</span></button>
-                                              <button class="tree-branch-name">
-                                                <span class="glyphicon icon-folder glyphicon-folder-close"></span>
-                                                <span class="tree-label"></span>
-                                              </button>
-                                            </div>
-                                            <ul class="tree-branch-children" role="group"></ul>
-                                            <div class="tree-loader" role="alert">Loading...</div>
-                                          </li>
-                                          <li class="tree-item hide" data-template="treeitem" role="treeitem">
-                                            <button class="tree-item-name">
-                                              <span class="glyphicon icon-item fueluxicon-bullet"></span>
-                                              <span class="tree-label"></span>
-                                            </button>
-                                          </li>
-                                        </ul>
+                                    <div class="widget-main padding-8" id="roleTree">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <script type="text/javascript">
-                        var $assets = "assets";//this will be used in fuelux.tree-sampledata.js
-                    </script>
-
                     <!-- PAGE CONTENT ENDS -->
 				</div><!-- /.page-content -->
 			</div><!-- /main-content -->
@@ -706,142 +666,69 @@
 	<![endif]-->
 
 	<script src="assets/js/bootstrap.min.js"></script>
-
-    <!-- page specific plugin scripts -->
-
-    <script src="assets/js/fuelux/data/fuelux.tree-sampledata.js"></script>
-    <script src="assets/js/fuelux/fuelux.tree.min.js"></script>
-    <script src="assets/js/ace.min.js"></script>
-	<script src="assets/js/ace-elements.min.js"></script>
-    <script src="http://www.fuelcdn.com/fuelux/3.7.3/js/fuelux.min.js"></script>
+	<script src="assets/js/ace.min.js"></script>
+    <script src="assets/js/ace-elements.min.js"></script>
+    <script src="assets/js/base-ui.js"></script>
     <script>
-    function staticDataSource(openedParentData, callback) {
-        childNodesArray = [
-            { "name": "Ascending and Descending", "type": "folder" },
-            { "name": "Sky and Water I", "type": "item" },
-            { "name": "Drawing Hands", "type": "folder" },
-            { "name": "waterfall", "type": "item" },
-            { "name": "Belvedere", "type": "folder" },
-            { "name": "Relativity", "type": "item" },
-            { "name": "House of Stairs", "type": "folder" },
-            { "name": "Convex and Concave", "type": "item" }
-        ];
+        var datas = [{
+            index: "0",
+            name: "系统管理",
+            checked: false,
+            children: [{
+                index: "0-0",
+                name: "角色管理",
+                checked: false
+            }, {
+                index: "0-1",
+                name: "账户管理",
+                checked: false
+            }, {
+                index: "0-2",
+                name: "导航管理",
+                checked: true
+            }, {
+                index: "0-3",
+                name: "权限管理"
+            }]
+        }, {
+            index: "1",
+            name: "网站管理",
+            checked: false,
+            children: [{
+                index: "1-0",
+                name: "友情链接",
+                checked: false
+            }, {
+                index: "1-1",
+                name: "内容管理",
+                checked: false
+            }, {
+                index: "1-2",
+                name: "内容通知",
+                checked: true
+            }]
+        }, {
+            index: "2",
+            name: "控制台",
+            checked: false,
+            children: [{
+                index: "2-0",
+                name: "内容通知",
+            }]
+        }, {
+            index: "3",
+            name: "会员信息",
+            checked: false,
+            children: [{
+                index: "3-0",
+                name: "用户信息",
+            }]
+        }];
 
-        callback({
-            data: childNodesArray
-        });
-    }
-    $('#myTree').tree({
-      dataSource: staticDataSource,
-      multiSelect: false,
-      folderSelect: true
-    });
-    var DataSourceTree = function(options) {
-        this._data  = options.data;
-        this._delay = options.delay;
-    }
-
-    DataSourceTree.prototype.data = function(options, callback) {
-        var self = this;
-        var $data = null;
-
-        if(!("name" in options) && !("type" in options)){
-            $data = this._data;//the root tree
-            callback({ data: $data });
-            return;
-        } else if("type" in options && options.type == "folder") {
-            if("additionalParameters" in options && "children" in options.additionalParameters){
-                $data = options.additionalParameters.children;
-            } else {
-                $data = {}//no data   
-            }
-        }
-        
-        if($data != null) {//this setTimeout is only for mimicking some random delay
-            setTimeout(function(){
-                callback({ data: $data });
-            // }, parseInt(Math.random() * 500) + 200);
-            }, 0);
-        }
-        //we have used static data here
-        //but you can retrieve your data dynamically from a server using ajax call
-        //checkout examples/treeview.html and examples/treeview.js for more info
-    };
-
-    var tree_data = {
-        'test' : {name: 'Test', type: 'folder'},
-        'admin' : {name: '管理员', type: 'folder'},
-        'user' : {name: '普通用户', type: 'folder'}
-    };
-    tree_data.admin.additionalParameters = {
-        children: {
-            sysMgr: {
-                additionalParameters: {
-                    children: {
-                        accountMgr: {
-                            name: "账户管理",
-                            type: "item"
-                        },
-                        roleMgr: {
-                            name: "角色管理",
-                            type: "item"
-                        },
-                        authMgr: {
-                            name: "权限管理",
-                            type: "item"
-                        }
-                    }
-                },
-                name: "系统管理",
-                type: "folder"
-            },
-            websiteMgr: {
-                additionalParameters: {
-                    children: {
-                        index: {
-                            name: "首页管理",
-                            type: "item"
-                        }
-                    }
-                },
-                name: "网站管理",
-                type: "folder"
-            }
-        }
-    };
-    tree_data.user.additionalParameters = {
-        children: {
-            websiteMgr: {
-                additionalParameters: {
-                    children: {
-                        index: {
-                            name: "首页管理",
-                            type: "item"
-                        }
-                    }
-                },
-                name: "网站管理",
-                type: "folder"
-            }
-        }
-    };
-    var treeDataSource = new DataSourceTree({data: tree_data});
-
-    jQuery(function($){
-        var $roleTree = $("#tree1");
-
-        $roleTree.ace_tree({
-            dataSource: treeDataSource,
-            multiSelect: true,
-            folderSelect: true,
-            loadingHTML: '<div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>',
-            'open-icon': 'icon-minus',
-            'close-icon': 'icon-plus',
-            'selectable': true,
-            'selected-icon': 'icon-ok',
-            'unselected-icon': 'icon-remove'
-        });
-    });
-	</script>
+        // init tree
+        var ltree = new Ltree(datas, $("#roleTree"));
+        // 返回整个 tree, 包含选中的数据，并且随用户的操作及时更新
+        console.log(ltree);
+    </script>
 </body>
 </html>
