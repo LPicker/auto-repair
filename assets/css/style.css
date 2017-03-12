@@ -32,6 +32,8 @@ img{line-height:0;font-size:0;}
 .l-tooltip.light-gray:after{ border-top: 6px solid #a1a1a1;}
 .l-tooltip.pink{background-color:#f47c7a;}
 .l-tooltip.pink:after{ border-top: 6px solid #f47c7a;}
+.l-tooltip.grey{background-color:#777;}
+.l-tooltip.grey:after{ border-top: 6px solid #777;}
 
 .list-page{padding:28px 2% 0;}
 
@@ -95,6 +97,10 @@ img{line-height:0;font-size:0;}
 .radio-group .radio-control+.radio-control{margin-left:26px;}
 .radio-group input[type="radio"]{vertical-align:middle; margin-top:-2px; margin-bottom:1px;}
 /* 复选框组 */
+
+.nav-list>.open .submenu{
+	display: block;
+}
 
 /* dialog */
 .layer-dialog {
