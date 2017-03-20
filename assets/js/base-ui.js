@@ -10,7 +10,7 @@ function tooltip(){    //tooltip 自定义工具提示
         $the.data("title", title);
         $the.removeAttr("title");
         // 可选的颜色
-        var colors = ["blue", "blueDeep", "green", "red", "cyan", "cyanDeep", "goldenrod", "brown", "gray", "light-gray", "pink"];
+        var colors = ["grey", "blue", "blueDeep", "green", "red", "cyan", "cyanDeep", "goldenrod", "brown", "gray", "light-gray", "pink"];
         var Ltooltip_bg = (function(){
             var color = null;
             for (var i = 0, len = colors.length; i < len; i++) {
@@ -94,7 +94,9 @@ function Ltree(tree, tarEle){
                 type: "checkbox",
                 checked: ele.checked,
                 class: "ace ace-checkbox-2",
-                "data-index": ele.index
+                "data-index": ele.index,
+                name:"auth_id",
+                value:ele.value
             });
             var $label = $("<label>", {
                 index: ele.index
@@ -122,7 +124,11 @@ function Ltree(tree, tarEle){
 
     var checkAll = function(id, checked){
         $("#"+id).find("ul :checkbox").prop("checked", checked);
-        $.each(treeDatas[id].children, function(i, ele){
+        var children = treeDatas[id].children;
+        if(!children){
+        	return;
+        }
+        $.each(children, function(i, ele){
             ele.checked = checked;
         });
     };
