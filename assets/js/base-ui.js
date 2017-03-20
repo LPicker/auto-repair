@@ -133,7 +133,7 @@ function Ltree(tree, tarEle){
         var $checkedbox = $parentLi.find("ul :checkbox:checked");
         var parCheckbox = $parentLi.find("label :checkbox")[0];
         if($checkedbox.length < $checkbox.length){
-            parCheckbox.checked = false;
+            // parCheckbox.checked = false;
             treeDatas[id].checked = false;
         }else{
             parCheckbox.checked = true;
