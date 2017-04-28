@@ -1,106 +1,356 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="utf-8" />
-	<title>Login</title>
-	<meta name="keywords" content="Login" />
-	<meta name="description" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-
-	<link rel="stylesheet" href="assets/css/ace.min.css" />
-
-	<!--[if lte IE 8]>
-	  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-	<![endif]-->
-
-	<!-- inline styles related to this page -->
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate,post-check=0,ptr-check=0">
+    <meta http-equiv="Cache" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/ace.min.css">
+    <style>
+    body {
+        font-size: 12px;
+        font-family: 'Microsoft YaHei';
+        color: #f4f4f4;
+        display: block;
+        margin: 0;
+        background-color: #fff;
+    }
+   
+    
+    .login_error {
+        /* position: absolute;*/
+        top: 56px !important;
+        left: 299px;
+    }
+    
+    .icon_error {
+        background: url(../images/verifycode_valid.png) no-repeat;
+        text-indent: 1.5em;
+        line-height: 16px;
+        color: #ff0000;
+        font-family: "Tahoma", "Arial", "微软雅黑";
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        height: 20px;
+        width: 300px;
+        float: left;
+    }
+    
+    .validate_input {
+        margin-right: 4px;
+        float: left;
+        width: 100px;
+    }
+    
+    .validate_btn img {
+        margin-top: 2px;
+        cursor: pointer;
+    }
+    
+    .validate_btn {
+        margin-right: 4px;
+        margin-top: 3px;
+        float: left;
+        width: 30px;
+        margin-left: 5px;
+    }
+    
+    .validate_img {
+        margin-right: 4px;
+        margin-top: 3px;
+        float: left;
+        width: 79px;
+    }
+    
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 12px;
+        font-family: "Tahoma", "Arial", "微软雅黑";
+        color: #333;
+    }
+    
+    .validate_btn a:link {
+        color: #069;
+        text-decoration: none;
+    }
+    
+    .verifycode_hidden {
+        visibility: hidden;
+    }
+    
+    @media screen and (max-height: 768px) {}
+    .loginformpassword {
+        position: relative;
+        width: 250px;
+        height: 50px;
+        margin-left: 50px;
+        top: -3px;
+    }
+    
+    .widthLimit {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    #footer {
+        background-color: #E2E2E2;
+        color: #898989;
+        position: relative;
+        width: 100%;
+        height: 70px;
+        clear: both;
+    }
+    
+    #loginAdv {
+        width: 60%;
+        max-width: 800px;
+        max-height: 515px;
+    }
+    
+    #loginAdv,
+    #loginFormArea {
+        float: left;
+        margin-left: 5%;
+        margin-top: 30px;
+    }
+    
+    #loginFormArea {
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        max-width: 380px;
+        display: inline-block;
+        width: 30%;
+        background-color: #fff;
+        color: #C1C1C1;
+        position: relative;
+        font-size: 14px;
+    }
+    
+    #companyUser,
+    #personalUser {
+        color: #333;
+        font-size: 28px;
+        margin-top: 35px!important;
+        margin-bottom: auto!important;
+    }
+    
+    #companyUser>span,
+    #personalUser>span {
+        line-height: 28px;
+        height: 28px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    #companyUser>hr,
+    #personalUser>hr {
+        display: inline-block;
+        margin: 5px;
+        border: 0;
+        border-bottom: 1px solid #C9C9C9;
+    }
+    
+    #personalUser>hr {
+        width: 172px;
+    }
+    
+    #login_content {
+        position: relative;
+        margin: 0 auto -70px!important;
+        height: calc(100% - 45px);
+    }
+    
+    #loginAdv img {
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        vertical-align: middle;
+        border: 0;
+        margin-top: -63px;
+    }
+    
+    input {
+        border-radius: 2px;
+        border: 1px solid #d5d5d5;
+        background-color: #fff;
+        padding: 2px 8px;
+        box-sizing: border-box;
+        outline: 0;
+        vertical-align: middle;
+    }
+    
+    #username,
+    #value {
+        width: 300px;
+        height: 42px;
+        padding: 2px 8px;
+    }
+    
+    #verificationCode {
+        height: 42px;
+        width: 149px;
+        margin-top: 12px
+    }
+    
+    #personalUser {
+        color: #333;
+        font-size: 28px;
+        margin-top: 35px!important;
+        margin-bottom: auto!important;
+        padding-bottom: 5px;
+    }
+    
+    #companyUser,
+    #personalUser {
+        margin: auto 10% 15px;
+    }
+    
+    .errormessagediv,
+    #personalUser,
+    .loginforminput,
+    .loginformpassword,
+    .loginformverify {
+        margin: auto 10% 12px;
+    }
+    
+    .loginBtn {
+        height: 42px;
+        margin: 0 auto;
+        display: block;
+        line-height: 42px;
+        vertical-align: middle;
+        text-align: center;
+        background-color: #1b6aaa;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    #buttonArea {
+        margin: auto 10%;
+        margin-top: 20px;
+    }
+    
+    #login_content:before {
+        padding-top: 70px;
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    input[type=text]:focus,
+    input[type=password]:focus {
+        border: 1px solid #7AA9DF;
+    }
+    
+    #checkVerifycodeSucs,
+    #checkVerifycodeFail {
+        vertical-align: middle;
+        margin-left: 5px;
+        display: none
+    }
+    
+    ::-ms-reveal {
+        display: none;
+    }
+    
+    #login_content::after,
+    #login_content::before {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    
+    body,
+    html {
+        height: 100%;
+    }
+    
+    #login_content,
+    #footer {
+        min-width: 1280px;
+    }
+    
+    .copyRightArea {
+        display: inline-block;
+        line-height: 70px;
+        height: 70px;
+    }
+    
+    .copyRightTextCenter {
+        text-align: center
+    }
+    </style>
 </head>
+<title>
+    登录
+</title>
 
-<body class="login-layout">
-	<div class="main-container">
-		<div class="main-content">
-			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1">
-					<div class="login-container">
-						<div class="center">
-							<h1>
-								<i class="icon-leaf green"></i>
-								<span class="white">Auto-repair-Management</span>
-							</h1>
-							<h4 class="blue">&copy; Jian-Xin web</h4>
-						</div>
+<body>
+	<div class="navbar navbar-default" id="navbar">
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <i class="icon-leaf"></i>
+                        ACE后台管理系统
+                    </small>
+                </a><!-- /.brand -->
+            </div><!-- /.navbar-header -->
+        </div><!-- /.container -->
+    </div>
 
-						<div class="space-6"></div>
-
-						<div class="position-relative">
-							<div id="login-box" class="login-box visible widget-box no-border">
-								<div class="widget-body">
-									<div class="widget-main">
-										<h4 class="header blue lighter bigger">
-											<i class="icon-coffee green"></i>
-											Please Enter Your Information
-										</h4>
-
-										<div class="space-6"></div>
-
-										<form>
-											<fieldset>
-												<label class="block clearfix">
-													<span class="block input-icon input-icon-right">
-														<input type="text" class="form-control" placeholder="Username" />
-														<i class="icon-user"></i>
-													</span>
-												</label>
-
-												<label class="block clearfix">
-													<span class="block input-icon input-icon-right">
-														<input type="password" class="form-control" placeholder="Password" />
-														<i class="icon-lock"></i>
-													</span>
-												</label>
-
-												<label class="block clearfix">
-													<span class="block input-icon input-icon-right">
-														<input type="text" class="form-control width-35 pull-left" placeholder="验证码" />
-														<img src="assets/images/yz-code.png" class="pull-right">
-													</span>
-												</label>
-
-												<div class="space"></div>
-
-												<div class="clearfix">
-													<label class="inline">
-														<input type="checkbox" class="ace" />
-														<span class="lbl"> Remember Me</span>
-													</label>
-
-													<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
-														<i class="icon-key"></i>
-														Login
-													</button>
-												</div>
-
-												<div class="space-4"></div>
-											</fieldset>
-										</form>
-									</div><!-- /widget-main -->
-								</div><!-- /widget-body -->
-							</div><!-- /login-box -->
-						</div><!-- /position-relative -->
-					</div>
-				</div><!-- /.col -->
-			</div><!-- /.row -->
-		</div>
-	</div><!-- /.main-container -->
+    <div id="login_content">
+        <div class="widthLimit" id="centerLogo">
+            <div id="loginAdv">
+                <img src="assets/images/car.jpg">
+            </div>
+            <div id="loginFormArea">
+                <form method="post" cssClass="fm-v clearfix" action="" htmlEscape="true" enctype="multipart/form-data">
+                    <div id="personalUser">
+                        <span>登录</span>
+                    </div>
+                    <div class="errormessagediv">
+                        <div style="position: relative;">
+                            <div id="errorMessage" class="login_error">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="loginforminput">
+                        <input type="text" id="username" maxlength="64" autocomplete="off" class="right_name_textfield" tabindex="1" placeholder="用户名" />
+                    </div>
+                    <div class="loginformpassword">
+                        <input type="password" id="value" maxlength="64" autocomplete="off" class="right_name_textfield" style="margin-top: 12px;" tabindex="2" name="ssoCredentials.value" placeholder="密码" />
+                    </div>
+                    <div id="buttonArea">
+                    	<button class="loginBtn" id="btn_outerverify" type="submit">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="widthLimit copyRightTextCenter">
+            <div class="copyRightArea">
+                版权所有 ©
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
