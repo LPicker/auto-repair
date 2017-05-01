@@ -19,21 +19,19 @@
         color: #f4f4f4;
         display: block;
         margin: 0;
+        padding-bottom: 70px;
         background-color: #fff;
     }
-   
     
     .login_error {
-        /* position: absolute;*/
-        top: 56px !important;
-        left: 299px;
+        color: #f00;
     }
     
     .icon_error {
         background: url(../images/verifycode_valid.png) no-repeat;
         text-indent: 1.5em;
         line-height: 16px;
-        color: #ff0000;
+        color: #f00;
         font-family: "Tahoma", "Arial", "微软雅黑";
         text-overflow: ellipsis;
         overflow: hidden;
@@ -63,10 +61,7 @@
     }
     
     .validate_img {
-        margin-right: 4px;
-        margin-top: 3px;
-        float: left;
-        width: 79px;
+        height: 42px;
     }
     
     ul,
@@ -91,7 +86,6 @@
     @media screen and (max-height: 768px) {}
     .loginformpassword {
         position: relative;
-        width: 250px;
         height: 50px;
         margin-left: 50px;
         top: -3px;
@@ -103,17 +97,18 @@
         padding: 0 20px;
     }
     
-    #footer {
-        background-color: #E2E2E2;
-        color: #898989;
-        position: relative;
+    .footer {
+        position: absolute;
+        bottom: 0;
         width: 100%;
         height: 70px;
+        background-color: #E2E2E2;
+        color: #898989;
         clear: both;
     }
     
     #loginAdv {
-        width: 60%;
+        width: 55%;
         max-width: 800px;
         max-height: 515px;
     }
@@ -126,9 +121,7 @@
     }
     
     #loginFormArea {
-        margin-left: auto;
-        margin-right: auto;
-        height: 300px;
+        margin: 0 auto 38px;
         max-width: 380px;
         display: inline-block;
         width: 30%;
@@ -161,24 +154,21 @@
         border: 0;
         border-bottom: 1px solid #C9C9C9;
     }
-    
+    	
     #personalUser>hr {
         width: 172px;
     }
     
     #login_content {
         position: relative;
-        margin: 0 auto -70px!important;
-        height: calc(100% - 45px);
     }
     
     #loginAdv img {
         width: auto;
         height: auto;
-        max-width: 90%;
+        max-width: 85%;
         vertical-align: middle;
         border: 0;
-        margin-top: -63px;
     }
     
     input {
@@ -189,13 +179,6 @@
         box-sizing: border-box;
         outline: 0;
         vertical-align: middle;
-    }
-    
-    #username,
-    #value {
-        width: 300px;
-        height: 42px;
-        padding: 2px 8px;
     }
     
     #verificationCode {
@@ -225,6 +208,13 @@
         margin: auto 10% 12px;
     }
     
+    .loginforminput input,
+    .loginformpassword input,
+    .loginformverify input {
+        width: 300px;
+        height: 42px;
+        padding: 2px 8px;
+    }
     .loginBtn {
         height: 42px;
         margin: 0 auto;
@@ -276,13 +266,8 @@
         clear: both;
     }
     
-    body,
-    html {
-        height: 100%;
-    }
-    
     #login_content,
-    #footer {
+    .footer {
         min-width: 1280px;
     }
     
@@ -316,7 +301,7 @@
     </div>
 
     <div id="login_content">
-        <div class="widthLimit" id="centerLogo">
+        <div class="widthLimit clearfix">
             <div id="loginAdv">
                 <img src="assets/images/car.jpg">
             </div>
@@ -327,16 +312,22 @@
                     </div>
                     <div class="errormessagediv">
                         <div style="position: relative;">
-                            <div id="errorMessage" class="login_error">
+                            <div id="errorMessage" class="login_error">账号或密码错误！
                             </div>
                         </div>
                     </div>
                     <div class="loginforminput">
-                        <input type="text" id="username" maxlength="64" autocomplete="off" class="right_name_textfield" tabindex="1" placeholder="用户名" />
+                        <input type="text" autocomplete="off" class="right_name_textfield" tabindex="1" placeholder="用户名" />
                     </div>
                     <div class="loginformpassword">
-                        <input type="password" id="value" maxlength="64" autocomplete="off" class="right_name_textfield" style="margin-top: 12px;" tabindex="2" name="ssoCredentials.value" placeholder="密码" />
+                        <input type="password" maxlength="64" autocomplete="off" class="right_name_textfield" style="margin-top: 12px;" tabindex="2" name="ssoCredentials.value" placeholder="密码" />
                     </div>
+                    <div class="loginformverify clearfix">
+						<span class="block input-icon input-icon-right">
+							<input type="text" class="form-control width-35 pull-left" placeholder="验证码">
+							<img src="assets/images/yz-code.png" class="validate_img pull-right">
+						</span>
+					</div>
                     <div id="buttonArea">
                     	<button class="loginBtn" id="btn_outerverify" type="submit">登录</button>
                     </div>
@@ -344,7 +335,7 @@
             </div>
         </div>
     </div>
-    <div id="footer">
+    <div class="footer">
         <div class="widthLimit copyRightTextCenter">
             <div class="copyRightArea">
                 版权所有 ©
